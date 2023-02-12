@@ -1,28 +1,30 @@
 <template>
   <div class="container">
+    <img src="../assets/logo.png" alt="" width="50">
 
+    <pokemon_List :imageUrl="imageUrl" :apiUrl="apiUrl"/>
   </div>
 </template>
 
 
 <script>
   import pokemon_List from './PokemonList.vue';
-  import pokemon_Detail from './PokemonDetail.vue';
-  import pokemon_Search from './PokemonSearch.vue';
+  // import pokemon_Detail from './PokemonDetail.vue';
+  // import pokemon_Search from './PokemonSearch.vue';
 
-  import axiios from '../services/axios'
+  // import axiios from '../services/axios'
 
   export default {
     data: () => {
       return {
-        imageUrl: axiios.imageUrl,
-        apiUrl: axiios.apiUrl
+        imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/',
+        apiUrl: 'https://pokeapi.co/api/v2/'
       }
     },
     components: {
       pokemon_List,
-      pokemon_Detail,
-      pokemon_Search,
+      // pokemon_Detail,
+      // pokemon_Search,
     }
   }
 </script>
