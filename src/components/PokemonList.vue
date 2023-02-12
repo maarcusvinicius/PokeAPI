@@ -1,6 +1,9 @@
 <template>
   <div class="list">
-    <article v-for="(pokemon, index) in pokemons" :key="'poke' + index">
+    <article
+      v-for="(pokemon, index) in pokemons"
+      :key="'poke' + index"
+    >
       <img
         :src="imageUrl + pokemon.id + '.png'"
         width="96"
@@ -9,6 +12,9 @@
       />
       <h3>{{ pokemon.name }}</h3>
     </article>
+    <div id="scroll-trigger" ref="infinitescrolltrigger">
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
   </div>
 </template>
 
@@ -19,6 +25,7 @@ export default {
     return {
       pokemons: [],
       nextUrl: "",
+      currentUrl: "",
     };
   },
   methods: {
@@ -44,6 +51,20 @@ export default {
           console.log(error);
         });
     },
+    scrollTrigger() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > 0 && this.nextUrl) {
+            this.next();
+          }
+        });
+      });
+      observer.observe(this.$refs.infinitescrolltrigger);
+    },
+    next() {
+      this.currentUrl = this.nextUrl;
+      this.fetchData();
+    },
   },
   created() {
     this.currentUrl = this.apiUrl;
@@ -58,13 +79,12 @@ export default {
 <style lang="scss" scoped>
 .list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   grid-gap: 10px;
   width: 100%;
-  // max-width: 150px;
-  max-width: 1500px;
+  max-width: 250px;
   article {
-    height: 150px;
+    height: 200px;
     background-color: #efefef;
     text-align: center;
     text-transform: capitalize;
@@ -75,5 +95,14 @@ export default {
       margin: 0;
     }
   }
+}
+#scroll-trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+  font-size: 2rem;
+  color: #efefef;
 }
 </style>
