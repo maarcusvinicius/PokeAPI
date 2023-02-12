@@ -18,7 +18,7 @@
     data: () => {
       return {
         imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/',
-        apiUrl: 'https://pokeapi.co/api/v2/'
+        apiUrl: 'https://pokeapi.co/api/v2/pokemon/',
       }
     },
     components: {
@@ -42,6 +42,10 @@
     width: calc(100% - 20px);
     min-height: calc(100vh - 20px);
     background: linear-gradient(270deg, rgba(56,58,170,1) 0%, rgba(3,3,3,1) 100%, rgba(255,255,255,1) 100%);
+
+    img {
+      padding-bottom: 50px;
+    }
   }
 
 

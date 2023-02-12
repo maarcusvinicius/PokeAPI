@@ -23,7 +23,7 @@ export default {
   },
   methods: {
     fetchData() {
-      let req = new Request(this.apiUrl);
+      let req = new Request(this.currentUrl);
       fetch(req)
         .then((resp) => {
           if (resp.status === 200) return resp.json();
@@ -31,8 +31,12 @@ export default {
         .then((data) => {
           this.nextUrl = data.next;
           data.results.forEach((pokemon) => {
-            pokemon.id = pokemon.url.split('/')
-              .filter(function(part) {return !!part }).pop();
+            pokemon.id = pokemon.url
+              .split("/")
+              .filter(function (part) {
+                return !!part;
+              })
+              .pop();
             this.pokemons.push(pokemon);
           });
         })
@@ -42,7 +46,11 @@ export default {
     },
   },
   created() {
+    this.currentUrl = this.apiUrl;
     this.fetchData();
+  },
+  mounted() {
+    this.scrollTrigger();
   },
 };
 </script>
@@ -50,21 +58,22 @@ export default {
 <style lang="scss" scoped>
 .list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px;
   width: 100%;
-  max-width: 510px;
-}
-article {
-  height: 150px;
-  background-color: #efefef;
-  text-align: center;
-  text-transform: capitalize;
-  border-radius: 5px;
-  cursor: pointer;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
-}
-h3 {
-  margin: 0;
+  // max-width: 150px;
+  max-width: 1500px;
+  article {
+    height: 150px;
+    background-color: #efefef;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 10px 10px rgba(0, 0, 0, 0.2);
+    h3 {
+      margin: 0;
+    }
+  }
 }
 </style>
