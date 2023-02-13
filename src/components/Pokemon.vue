@@ -2,15 +2,16 @@
   <div class="container">
     <img src="../assets/logo.png" alt="" width="50">
 
-    <pokemon_List :imageUrl="imageUrl" :apiUrl="apiUrl"/>
+    <Buscar :apiUrl="apiUrl" @setPokemonUrl="setPokemonUrl" />
+    <Card v-if="showDetail" :pokemonUrl="pokemonUrl" :imageUrl="imageUrl" @closeDetail="closeDetail" />
+
   </div>
 </template>
 
 
 <script>
-  import pokemon_List from './PokemonList.vue';
-  // import pokemon_Detail from './PokemonDetail.vue';
-  // import pokemon_Search from './PokemonSearch.vue';
+  import Buscar from './Buscar.vue';
+  import Card from './Card.vue';
 
   // import axiios from '../services/axios'
 
@@ -19,18 +20,31 @@
       return {
         imageUrl: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/',
         apiUrl: 'https://pokeapi.co/api/v2/pokemon/',
+        pokemonUrl: '',
+        showDetail: false
       }
     },
     components: {
-      pokemon_List,
-      // pokemon_Detail,
-      // pokemon_Search,
+      Card,
+      Buscar,
+    },
+    methods: {
+      setPokemonUrl(url) {
+        this.pokemonUrl = url;
+        this.showDetail = true;
+      },
+      closeDetail() {
+        this.pokemonUrl = '';
+        this.showDetail = false;
+      }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  @import url('https://fonts.googleapis.com/css?family=Roboto');
   .container {
+    font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     font-weight: normal;
 
