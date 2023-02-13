@@ -19,12 +19,6 @@
             </div>
           </div>
           <div
-            width="110"
-            height="110"
-            viewBox="0 0 150 250"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-labelledby="title desc"
             class="center"
           >
             <div v-if="pokemon" class="image">
@@ -72,6 +66,7 @@
       </button>
       <!-- <i class="fas fa-spinner fa-spin"></i> -->
       <h2 class="error">Pokemom não encontrado,<br> tente novamente!</h2>
+      <span class="more">Favor escrever com letras minúsculas</span>
     </div>
   </div>
 </template>
@@ -232,18 +227,11 @@ export default {
   margin-bottom: 0;
 }
 
-.card.green .additional .more-info h1 {
-  color: #224c36;
-}
 
 .card .additional .coords {
   margin: 0 1rem;
   color: #fff;
   font-size: 1rem;
-}
-
-.card.green .additional .coords {
-  color: #325c46;
 }
 
 .card .additional .coords span + span {
@@ -259,10 +247,6 @@ export default {
   right: 1rem;
   top: auto;
   color: #fff;
-}
-
-.card.green .additional .stats {
-  color: #325c46;
 }
 
 .card .additional .stats > div {
@@ -283,12 +267,6 @@ export default {
   text-transform: uppercase;
 }
 
-.card .additional .stats div.value {
-  font-size: 0.7rem;
-  font-weight: bold;
-  line-height: 1.5rem;
-}
-
 .card .general {
   width: 300px;
   height: 100%;
@@ -306,5 +284,57 @@ export default {
   bottom: 1rem;
   right: 1rem;
   font-size: 0.9em;
+}
+
+.card span.more {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  font-size: 0.9em;
+}
+
+@media (max-width:  1024px) {
+  * {
+    max-height: max-content;
+  }
+  .card {
+    width: 330px;
+    height: 230px;
+  }
+
+  .card .general .more {
+    font-size: 0.5em;
+  }
+
+  .card .additional .more-info h1 {
+    text-align: center;
+  }
+
+  .card h1 {
+    text-align: right;
+  }
+  
+  .card .more-info {
+    font-size: 0.5rem;
+    margin-left: -35px;
+  }
+
+  .card .additional .more-info {
+    width: 220px;
+    font-size: 0.7rem;
+  }
+
+  .card .additional .more-info .stats span.coords {
+    width: 150px;
+    font-size: 1rem;
+  }
+
+  .card .additional .coords {
+    margin: 0 3rem;
+  }
+  
+  .card .additional .stats .coords {
+    margin: 0 1rem;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="searchbar">
     <form @submit.prevent="setPokemonUrl">
-      <input type="text" v-model="searchvalue">
+      <input placeholder="Digite o nome do Pokémon. Exemplo: 'pikachu'" type="text" v-model="searchvalue">
     </form>
     <i class="fas fa-search" @click="setPokemonUrl"></i>
   </div>
@@ -22,7 +22,7 @@
         if(this.searchvalue !== '') {
           this.$emit('setPokemonUrl', this.apiUrl + this.searchvalue);
         } else {
-          console.log('error')
+          console.log('Digite o nome do Pokémon')
         }
       }
     }
