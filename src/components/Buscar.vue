@@ -22,7 +22,6 @@
         if(this.searchvalue !== '') {
           this.$emit('setPokemonUrl', this.apiUrl + this.searchvalue);
         } else {
-          alert('error')
           console.log('error')
         }
       }
