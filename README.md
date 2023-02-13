@@ -63,7 +63,7 @@
 
 <br />
 
-Teste você mesmo!!🔎 
+Teste você mesmo!!🔎 https://poke-api-steel.vercel.app/
 
 <br />
 
@@ -101,7 +101,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O PokeAPI é um projeto que faz a busca de um pokemon mencionado no campo de input e com responsividade mobile, é possível verificar qual é seu tamanho, peso, sua typagem e quais são suas habilidades! Melhoraria esse projeto mostrando suas evoluções na screen de detalhes do pokémon.
+O PokeAPI é um projeto que faz a busca de um pokemon mencionado no campo de input e com responsividade mobile, é possível verificar qual é seu tamanho, peso, XP, seu tipo e quais são suas habilidades! Melhoraria esse projeto mostrando suas evoluções na screen de detalhes do pokémon.
 
 <br />
 
@@ -125,7 +125,7 @@ Acredito que para mim, foi bastante complicado iniciar o projeto, pois vinha vá
 
     - [x] Responsividade
 
-    - [ ] Deploy Vercel
+    - [x] Deploy Vercel
 
 <br />
 
