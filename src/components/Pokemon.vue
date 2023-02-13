@@ -53,7 +53,6 @@
     align-items: center;
     flex-direction: column;
     padding: 10px;
-    width: calc(100% - 20px);
     min-height: calc(100vh - 20px);
     background: linear-gradient(270deg, rgba(56,58,170,1) 0%, rgba(3,3,3,1) 100%, rgba(255,255,255,1) 100%);
 
