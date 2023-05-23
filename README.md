@@ -1,6 +1,6 @@
 <h1 align="center">PokeAPI 👾</h1>
 
-<p align="center">🔥 PokeAPI is a project that allows you to search for information about pokemons!
+<p align="left">🔥 PokeAPI is a project that allows you to search for information about pokemons!
 
 <br />
 
@@ -24,7 +24,7 @@ Through an input field it is possible to obtain details such as size, weight, XP
 
 <br />
 
-Teste você mesmo!!🔎 https://poke-api-steel.vercel.app/
+Try it yourself!!🔎 https://poke-api-steel.vercel.app/
 
 <br />
 
