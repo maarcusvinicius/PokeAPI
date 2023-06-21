@@ -30,11 +30,11 @@ Try it yourself!!🔎 https://poke-api-steel.vercel.app/
 
 ## 🎡 Functionalities
 
-- Pokémon Search: The project allows you to search for information about a specific Pokémon through the input field.
+- Pokémon Search: The project allows you to search for information about a specific Pokémon through the input field
 
-- Pokémon details: After the search, details about the Pokémon are displayed, such as size, weight, XP, type and skills.
+- Pokémon details: After the search, details about the Pokémon are displayed, such as size, weight, XP, type and skills
 
-- Error Handling: If an error occurs during the search, an error card is displayed to inform the user about the failure.
+- Error Handling: If an error occurs during the search, an error card is displayed to inform the user about the failure
 
 
 <br />
@@ -113,6 +113,17 @@ PokeAPI/
 - `App.vue`: responsible for containing and managing all other components of the project. It defines the general layout of the application, such as header, footer and other elements common to all pages.
 
 
+<br />
+
+## License
+
+<p>
+
+This project is licensed under the [MIT License](https://opensource.org/license/mit/). Feel free to use, modify and distribute it as needed.
+
+</p>
+
+<br />
 <br />
 <br />
 <h4 align="center"> 
